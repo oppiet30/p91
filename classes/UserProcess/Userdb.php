@@ -189,7 +189,6 @@ class Userdb extends Dbconnect
             if ($userdata->num_rows>0) {
                 $row=$userdata->fetch_assoc();
                 if (password_verify($upass, $row['USERPASS'])) {
-                    ini_set('session.gc_maxlifetime', 31536000);
                     $_SESSION['LOGIN']=true;
                     $_SESSION['UID']=$row['ID'];
                     $_SESSION['UNAME']=$row['USERID'];

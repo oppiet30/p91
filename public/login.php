@@ -12,6 +12,7 @@ if (isset($_GET['p'])) {
             die('Server is offline');
         }
         if (isset($_POST['Lusername']) && isset($_POST['Lpass'])) {
+            ini_set('session.gc_maxlifetime', 31536000);
             session_start();
             // require_once '../classes/Userdb.php';
             $login=new Userdb();
